@@ -17,13 +17,9 @@ To use the custom notification, we need to add some linse to the configuration.y
 
 ```yaml
 notify:
-  - platform: manish
-    name: MaNish whatsapp notifire
-    target: # WhatsApp number for notificatin (Without the + sign of the country_code)
-    token: #T he token for the Whatsapp cloud API
-    phone_number_id: #Phone number id from the Whatsapp cloud API
-    template: # Template's name's to use
-    language: # Template's language
+  - platform: serverchan
+    name: ServerChan notifier
+    token: SC_xxx # The token of ServerChan SendKey
 ```
 
 Restart HomeAssistant and you should see a new service :
