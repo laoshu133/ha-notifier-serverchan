@@ -1,0 +1,12 @@
+{
+    "domain": "serverchan",
+    "name": "ha-notifier-serverchan",
+    "codeowners": [
+        "@laoshu133"
+    ],
+    "iot_class": "local_polling",
+    "documentation": "https://github.com/laoshu133/ha-notifier-serverchan",
+    "issue_tracker": "https://github.com/laoshu133/ha-notifier-serverchan/issues",
+    "requirements": [],
+    "version": "0.0.1"
+}

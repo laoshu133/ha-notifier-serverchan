@@ -1,0 +1,9 @@
+notify:
+  description: "A HA custom notification / notify powered by ServerChan."
+  fields:
+    title:
+      description: The title of message
+      example: "Hello ha-notifier-serverchan"
+    content:
+      description: The content of message
+      example: ""
