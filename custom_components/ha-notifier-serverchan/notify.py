@@ -9,13 +9,13 @@ import voluptuous as vol
 
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.notify import (
-    ATTR_MESSAGE, ATTR_TITLE, PLATFORM_SCHEMA, BaseNotificationService)
+    ATTR_TITLE, ATTR_MESSAGE, PLATFORM_SCHEMA, BaseNotificationService)
 
 _LOGGER = logging.getLogger(__name__)
 
 _API_ENDPOINT = 'http://sc.ftqq.com'
 
-ATTR_TOKEN = 'SendKey'
+ATTR_TOKEN = 'token'
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(ATTR_TOKEN): cv.string
@@ -36,6 +36,11 @@ class ServerchanNotificationService(BaseNotificationService):
         """Send a message to the target."""
         url = '{}/{}.send'.format(_API_ENDPOINT, self._token)
         title = kwargs.get(ATTR_TITLE)
+
+        # If title is not set, use message as title
+        if not title:
+            title = message
+            message = ""
 
         if title:
             timestp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
